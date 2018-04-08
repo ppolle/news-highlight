@@ -2,17 +2,17 @@
 {% block content%}
 <div class="container">
 	<!-- Popular movie section  -->
-        <h3> Popular Sources</h3>
+        <h3> Top Headlines</h3>
         <div class="row">
         	
 	        	<ul>
-		            {% for sources in sources %}
-		            <a href="/sources/{{sources.id}}">
-		            	<li>{{ sources.name}}</li>
-		            </a>
+		            {% for article in articles %}
+		                <li>{{ article.title}}</li>
 		                
 		            {% endfor %}
 	        	</ul>
+        		
+        	
         </div>
          
 	
