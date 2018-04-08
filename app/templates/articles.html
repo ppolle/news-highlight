@@ -3,18 +3,20 @@
 <div class="container">
 	<!-- Popular movie section  -->
         <h3> Top Headlines</h3>
-        <div class="row">
-        	
-	        	<ul>
-		            {% for article in articles %}
-		                <li>{{ article.title}}</li>
-		                
-		            {% endfor %}
-	        	</ul>
-        		
-        	
-        </div>
+        {% for article_row in articles | batch(3)%}
+	        <div class="row">
+		        {% for article in article_row %}
+		        	<div class="col-md-3">
+		        	<ul>
+		        		<li>{{ article.title}} </li>
+		        	</ul>
+			     		
+				     </div>
+		        {% endfor %}
+	        </div>
          
+        {% endfor %}
+        
 	
 </div>
 
