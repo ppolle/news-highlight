@@ -7,8 +7,8 @@
 <!-- Popular movie section  -->
         <h3> Popular Sources</h3>
          <ul>
-            {% for sources in get_sources %}
-                <li>{{ popular_movie.name}}</li>
+            {% for sources in sources %}
+                <li>{{ sources.name}}</li>
             {% endfor %}
         </ul>
 

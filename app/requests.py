@@ -22,15 +22,15 @@ def get_sources():
 		get_sources_data = url.read()
 		get_sources_response = json.loads(get_sources_data)
 
-		movie_results = None
+		sources_results = None
 
-		if get_sources_response['results']:
-			sources_results_list = get_sources_response['results']
-			sources_results = process_results(sources_results_list)
+		if get_sources_response['sources']:
+			sources_results_list = get_sources_response['sources']
+			sources_results = process_sources(sources_results_list)
 
-	return movies_results
+	return sources_results
 
-def process_results(sources_list):
+def process_sources(sources_list):
 	'''
 	Function that processes the news sources results and turns them into a list of objects
 	Args:
@@ -40,14 +40,17 @@ def process_results(sources_list):
 	'''
 	sources_results = []
 
-	for source_item in source_list:
+	for source_item in sources_list:
 		id = source_item.get('id') 
 		name = source_item.get('name')
 		description = source_item.get('description')
 		url = source_item.get('url')
 		category = source_item.get('category')
+		language = source_item.get('language')
+		country = source_item.get('country')
 
-		sources_object = Sources(id,name,description,url,category)
-		sources_results = append(sources_object)
+
+		sources_object = Sources(id,name,description,url,category,country,language)
+		sources_results.append(sources_object)
 
 	return sources_results

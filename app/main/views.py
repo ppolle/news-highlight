@@ -9,5 +9,5 @@ def index():
 	'''
 	view root page function that returns the index the page and its data
 	'''
-	get_sources = get_sources()
-	return render_template('index.html', get_sources = get_sources)
+	sources = get_sources()
+	return render_template('index.html', sources = sources)
