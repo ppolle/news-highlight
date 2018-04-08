@@ -1,16 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>News Highlight</title>
-</head>
-<body>
-<!-- Popular movie section  -->
+{% extends 'base.html'%}
+{% block content%}
+<div class="container">
+	<!-- Popular movie section  -->
         <h3> Popular Sources</h3>
          <ul>
             {% for sources in sources %}
                 <li>{{ sources.name}}</li>
             {% endfor %}
         </ul>
+	
+</div>
 
-</body>
-</html>
+
+{%endblock%}
