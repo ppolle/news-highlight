@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>News Highlight</title>
+</head>
+<body>
+<!-- Popular movie section  -->
+        <h3> Popular Sources</h3>
+         <ul>
+            {% for sources in get_sources %}
+                <li>{{ popular_movie.name}}</li>
+            {% endfor %}
+        </ul>
+
+</body>
+</html>
