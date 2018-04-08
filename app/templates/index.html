@@ -3,11 +3,17 @@
 <div class="container">
 	<!-- Popular movie section  -->
         <h3> Popular Sources</h3>
-         <ul>
-            {% for sources in sources %}
-                <li>{{ sources.name}}</li>
-            {% endfor %}
-        </ul>
+        <div class="row">
+        	<div class="col-md-1">
+	        	<ul>
+		            {% for sources in sources %}
+		                <li>{{ sources.name}}</li>
+		            {% endfor %}
+	        	</ul>
+        		
+        	</div>
+        </div>
+         
 	
 </div>
 
