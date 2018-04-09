@@ -2,18 +2,28 @@
 {% block content%}
 <div class="container">
 	<!-- Popular movie section  -->
-        <h3> Popular Sources</h3>
+        <h3> Popular News Sources</h3>
         {% for source_row in sources | batch(4)%}
         <div class="row">
         	
 	        	
             {% for sources in source_row %}
             <div class="col-md-3">
-	            <ul>
-		            <a href="/sources/{{sources.id}}">
-		            	<li>{{ sources.name}}</li>
-		            </a>
-	            </ul>
+	           
+	            <div class="panel panel-default">
+					<div class="panel-heading">
+						<a href="/sources/{{sources.id}}">
+						    {{ sources.name}}
+				        </a>
+					</div>
+					<div class="panel-body">
+						<p>
+							{{ sources.description |truncate(100)}}
+						</p>
+						<a href="/sources/{{sources.id}}" class="btn btn-success btn-sm">{{sources.name}} News</a>
+					</div>
+	
+				</div>
 	        </div>
             {% endfor %}
 	        	

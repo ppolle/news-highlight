@@ -5,14 +5,17 @@
         <h3> Top Headlines</h3>
         {% for article_row in articles | batch(3)%}
 	        <div class="row">
+	       
 		        {% for article in article_row %}
 		        	<div class="col-md-3">
-		        	<ul>
-		        		<li>{{ article.title}} </li>
-		        	</ul>
-			     		
-				     </div>
+			        	<!-- <ul>
+			        		<li>{{ article.title}} </li>
+			        	</ul> -->
+
+			     	</div>
+			     	
 		        {% endfor %}
+	        
 	        </div>
          
         {% endfor %}
@@ -22,3 +25,25 @@
 
 
 {%endblock%}
+<!-- 
+ <div class="card">
+    <img class="card-img-top" src="{{article.image}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{article.title}}</h5>
+      <p class="card-text">{{article.description | truncate(150)}}</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Created on: {{article.date}}</small>
+    </div>
+  </div>
+ -->
+ <!--  <div class="thumbnail">
+      <img src="..." alt="...">
+      <div class="caption">
+        <h3>{{article.title}}</h3>
+        <p>{{article.description}}</p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+  </div>
+ -->
+ 
