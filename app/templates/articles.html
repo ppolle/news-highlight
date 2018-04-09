@@ -3,14 +3,21 @@
 <div class="container">
 	<!-- Popular movie section  -->
         <h3> Top Headlines</h3>
-        {% for article_row in articles | batch(3)%}
+        {% for article_row in articles | batch(4)%}
 	        <div class="row">
 	       
 		        {% for article in article_row %}
 		        	<div class="col-md-3">
-			        	<!-- <ul>
-			        		<li>{{ article.title}} </li>
-			        	</ul> -->
+				        <div class="thumbnail">
+						      <img src="{{article.image}}" alt="{{article.title}}">
+						      <div class="caption">
+						        <h4>{{article.title |truncate(35)}}</h4>
+						        <p>{{article.description | truncate(80)}}</p>
+						        <a href="{{article.url}}" target="_blank"> Read More</a>
+						        
+						      </div>
+	  					</div>
+
 
 			     	</div>
 			     	
