@@ -9,13 +9,16 @@
 		        {% for article in article_row %}
 		        	<div class="col-md-3">
 				        <div class="thumbnail">
-						      <img src="{{article.image}}" alt="{{article.title}}">
+						      <img src="{{article.image}}" alt="{{article.title}}" class="img-responsive">
 						      <div class="caption">
 						        <h4>{{article.title |truncate(35)}}</h4>
 						        <p>{{article.description | truncate(80)}}</p>
 						        <a href="{{article.url}}" target="_blank"> Read More</a>
 						        
 						      </div>
+						      <div class="footer">
+						Article created on:{{article.date}}
+					</div>
 	  					</div>
 
 
@@ -32,25 +35,5 @@
 
 
 {%endblock%}
-<!-- 
- <div class="card">
-    <img class="card-img-top" src="{{article.image}}" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">{{article.title}}</h5>
-      <p class="card-text">{{article.description | truncate(150)}}</p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">Created on: {{article.date}}</small>
-    </div>
-  </div>
- -->
- <!--  <div class="thumbnail">
-      <img src="..." alt="...">
-      <div class="caption">
-        <h3>{{article.title}}</h3>
-        <p>{{article.description}}</p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-      </div>
-  </div>
- -->
+
  
