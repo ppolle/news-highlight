@@ -9,7 +9,7 @@
 		        {% for article in article_row %}
 		        	<div class="col-md-3">
 				        <div class="thumbnail">
-						      <img src="{{article.image}}" alt="{{article.title}}" class="img-responsive">
+						      <img src="{{article.image}}" alt="{{article.title}}" class="img-responsive" styles="height:30px">
 						      <div class="caption">
 						        <h4>{{article.title |truncate(35)}}</h4>
 						        <p>{{article.description | truncate(80)}}</p>
@@ -17,8 +17,10 @@
 						        
 						      </div>
 						      <div class="footer">
-						Article created on:{{article.date}}
-					</div>
+						      {{article.date}}
+						      
+								
+							</div>
 	  					</div>
 
 

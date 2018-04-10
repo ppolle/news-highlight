@@ -1,5 +1,6 @@
 import urllib.request,json
 from .models import Sources,Articles
+from datetime import datetime
 
 #getting the api key
 api_key = None
@@ -16,7 +17,7 @@ def configure_request(app):
 	base_url = app.config['NEWS_SOURCES_BASE_URL']
 	articles_url = app.config['ARTICLES_BASE_URL']
 
-def get_sources():
+def get_sources(category):
 	'''
 	Function that gets the json response to our url request
 	'''
@@ -88,6 +89,7 @@ def process_articles(articles_list):
 		url = article_item.get('url')
 		image = article_item.get('urlToImage')
 		date = article_item.get('publishedAt')
+		
 		if image:
 			articles_result = Articles(id,author,title,description,url,image,date)
 			articles_object.append(articles_result)	
