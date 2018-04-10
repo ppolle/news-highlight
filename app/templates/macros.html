@@ -1,12 +1,7 @@
 {% macro displaySourceList(source_list) %}
 
-	{% for source_row in source_list %}
-        <li>{{source_row.name}}</li>
-    {% endfor %}
-
-{% endmacro %}
-
-<div class="row">
+	{% for source_row in source_list |batch(4)%}
+        <div class="row">
         	
 	        	
             {% for sources in source_row %}
@@ -32,3 +27,7 @@
             {% endfor %}
 	        	
         </div>
+    {% endfor %}
+
+{% endmacro %}
+
