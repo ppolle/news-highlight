@@ -9,8 +9,9 @@ def index():
 	'''
 	view root page function that returns the index the page and its data
 	'''
-	sources = get_sources()
-	return render_template('index.html', sources = sources)
+	sources = get_sources(general)
+	sports_sources = get_sources(sports)
+	return render_template('index.html', sources = sources,sports_sources = sports_sources)
 
 @main.route('/sources/<id>')
 def articles(id):
