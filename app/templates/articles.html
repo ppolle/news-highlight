@@ -9,11 +9,11 @@
 		        {% for article in article_row %}
 		        	<div class="col-md-3">
 				        <div class="thumbnail">
-				        <a href="{{article.url}}">
+				        <a href="{{article.url}}" data-toggle="modal" data-target="#myModal">
 						      <img src="{{article.image}}" alt="{{article.title}}" class="img-responsive" styles="height:30px">
 						      </a>
 						      <div class="caption">
-						        <h4>{{article.title |truncate(35)}}</h4>
+						        <h4><a href="" data-toggle="modal" data-target="#myModal">{{article.title |truncate(35)}}</a></h4>
 						        <p>{{article.description | truncate(80)}}</p>
 						        <a href="" data-toggle="modal" data-target="#myModal"> Read More</a>
 
@@ -40,7 +40,7 @@
 						        
 						      </div>
 						      <div class="footer">
-						      {{article.date}}
+						      Published at: {{article.date}}
 						      
 								
 							</div>
