@@ -11,4 +11,4 @@ MarkupSafe==1.0
 psycopg2==2.7.4
 SQLAlchemy==1.2.6
 visitor==0.1.3
-Werkzeug==0.14.1
+Werkzeug==0.15.3
